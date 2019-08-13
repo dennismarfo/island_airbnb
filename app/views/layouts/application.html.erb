@@ -1,21 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  </head>
-  <body>
-    <%= yield %>
-     <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>TODO</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+</head>
+<body>
+    <!-- NAVBAR USER CONNECTE -->
+<% if user_signed_in? %>
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://source.unsplash.com/random" width="30" height="30" alt="">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <span class="navbar-text">
+        <%= "Hote" %>
+      </span>
+
+      <span class="navbar-text ml-3">
+        <%= "Voyages" %>
+      </span>
+      <span class="navbar-text mt-3">
+        <ul class="no-style-list">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"> <%= link_to "Log out", destroy_user_session_path  %> </a>
+            </div>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </nav>
+
+  <% else %>
 
 
-  </body>
+  <!-- NAVBAR USER NON CONNECTE -->
+  <nav class="navbar navbar-expand navbar-light transparant-bg">
+    <a class="navbar-brand" href="#">
+      <img src="https://source.unsplash.com/random" width="30" height="30" alt="">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto ">
+
+      </ul>
+      <span class="navbar-text color-white">
+        <%= link_to "Inscription", new_user_registration_path %>
+      </span>
+
+      <span class="navbar-text ml-3 color-white">
+        <%= link_to "Connexion", new_user_session_path %>
+      </span>
+
+    </div>
+  </nav>
+
+<% end %>
+  <!-- NAVBAR OWNER CONNECTE (On fera la diff avec un IF en JS???)-->
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://source.unsplash.com/random" width="30" height="30" alt="">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <span class="navbar-text">
+        <%= "Réservations" %>
+      </span>
+
+      <span class="navbar-text ml-3">
+        <%= "Calendrier" %>
+      </span>
+
+       <span class="navbar-text ml-3">
+        <%= "Annonce" %>
+      </span>
+      <span class="navbar-text mt-3">
+        <ul class="no-style-list">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#"> <%= link_to "Log out", destroy_user_session_path %> </a>
+            </div>
+          </li>
+        </ul>
+      </span>
+    </div>
+  </nav>
+
+  <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
+</body>
 </html>

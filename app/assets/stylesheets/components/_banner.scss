@@ -22,3 +22,17 @@
 .bkg-no-repeat{
   background-repeat: none !important;
 }
+.container-log{
+background-image: url('https://source.unsplash.com/featured/?{Beach},{island}'); background-size :cover; background-repeat: no-repeat; height: 100vh; align-items: center; display:flex;}
+
+.center {
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.bg-white {
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+.bg-white a {
+  color:white;
+}

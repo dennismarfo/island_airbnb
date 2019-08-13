@@ -7,6 +7,6 @@ class Property < ApplicationRecord
   validates :country, presence: true
   validates :description, presence: true
   validates :price, presense: true
-  validates :category, presence: true
+  validates :category, presence: true, inclusion: { in: ["Island", "Beach"] }
   validates :photo_url, presence: true
 end

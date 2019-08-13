@@ -1,12 +1,16 @@
-<%= simple_form_for [@property] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :country, as: "string" %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :category %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "add a property", class: "btn btn-primary" %>
-<% end %>
-
+<div class="container-fluid container-properties">
+    <div class="col-4 p-4 center bg-white">
+        <h2 class="text-center">Create a property</h2>
+        <%= simple_form_for [@property] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :country, as: "string" %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.input :category %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "add a property", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+    </div>

@@ -12,12 +12,12 @@
 <body>
     <!-- NAVBAR USER CONNECTE -->
 <% if user_signed_in? %>
-  <% if current_page?(root_path) %>
+  <% if current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path)%>
     <%= render "shared/navbar_connected_invisible"  %>
   <% else %>
     <%= render "shared/navbar_connected"  %>
   <% end %>
-  <% elsif current_page?(root_path) %>
+  <% elsif current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path)%>
     <%= render "shared/navbar_no_connected_invisible"  %>
       <% else %>
     <%= render "shared/navbar_no_connected"  %>

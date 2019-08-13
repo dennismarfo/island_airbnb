@@ -14,8 +14,11 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     @property.user = current_user
-    @property.save
-    redirect_to property_path(@property)
+    if @property.save notice: 'Property was successfully created.'
+      redirect_to property_path(@property)
+    else
+      render :new
+    end
   end
 
   def edit

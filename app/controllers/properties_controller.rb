@@ -26,6 +26,14 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
   end
 
+  def destroy
+    @property = Property.find(params[:id])
+    @property.destroy
+
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to properties_path
+  end
+
   private
 
   def property_params

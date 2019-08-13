@@ -56,5 +56,25 @@ p4.remote_photo_url = "https://images.unsplash.com/photo-1537956965359-7573183d1
 p4.save!
 
 
+p5 = Property.new( name:"Kudahuvadhoo",
+  address:"Kudahuvadhoo",
+  country:"Maldives",
+  description:"Ile paradisiaque",
+  price:"800€",
+  category:"Island",
+  user_id: User.first.id)
+p5.remote_photo_url = "https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?ixlib=rb-1.2.1&auto=format&fit=crop&w=1491&q=80"
+p5.save!
+
+p5 = Property.new( name:"Gangehi",
+  address:"Gangehi",
+  country:"Maldives",
+  description:"Ile paradisiaque",
+  price:"800€",
+  category:"Island",
+  user_id: User.first.id)
+p5.remote_photo_url = "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+p5.save!
+
 
 

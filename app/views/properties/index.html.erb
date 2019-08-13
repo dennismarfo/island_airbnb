@@ -1,55 +1,29 @@
 <div class="cards">
-
- <div class="container mt-3 mb-3">
-  <div class="row">
-    <div class="col-4">
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
+  <div class="container mt-3 mb-3 d-flex flex-wrap">
+    <% @properties.each do |property| %>
+      <div class="col-4">
+        <%= link_to property_path(property) do %>
+          <div class="card-trip rounded-lg">
+            <%= cl_image_tag property.photo, width: 400, height: 300, crop: :fill%>
+            <div class="d-flex">
+              <div class="card-trip-infos">
+                <div>
+                  <h2>
+                    <%=link_to property.name, property_path(property) %>
+                  </h2>
+                  <p>
+                    <%= property.description %>
+                  </p>
+                </div>
+              </div>
+              <div class="" style="align-items: center;
+    display: flex;     margin-left: auto; padding-right: 5px;">
+                <h6><%= property.price %> € </h6>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    </div>
-    
-    <div class="col-4">
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-4">
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-4">
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <% end %>
   </div>
-  <!--  -->
+</div>

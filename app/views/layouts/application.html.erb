@@ -12,17 +12,16 @@
 <body>
     <!-- NAVBAR USER CONNECTE -->
 <% if user_signed_in? %>
-<%= render "shared/navbar_connected"  %>
-
-  <% else %>
-<%= render "shared/navbar_no_connected"  %>
+  <% if current_page?(root_path) %>
+    <%= render "shared/navbar_connected_invisible"  %>
+    <% else %>
+    <%= render "shared/navbar_connected"  %>
+    <% end %>
+<% else %>
+  <%= render "shared/navbar_no_connected"  %>
 
   <!-- NAVBAR USER NON CONNECTE -->
-
-
 <% end %>
-
-
 
   <%= yield %>
 

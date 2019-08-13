@@ -7,11 +7,19 @@ class PropertiesController < ApplicationController
     @property = Property.new
   end
 
+  def show
+    @property = Property.find(params[:id])
+  end
+
   def create
     @property = Property.new(property_params)
     @property.user = current_user
     @property.save
     redirect_to property_path(@property)
+  end
+
+  def edit
+    @property = Property.find(params[:id])
   end
 
   private

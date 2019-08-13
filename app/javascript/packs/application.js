@@ -1,3 +1,3 @@
 import "bootstrap";
-import Typed from 'components/typed.js';
-import "typed";
+import { typedHome } from '../components/typed';
+typedHome();

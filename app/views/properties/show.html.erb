@@ -1,8 +1,41 @@
-<h2><%= @property.name %></h2>
+<!-- <h2><%= @property.name %></h2>
 <p><%= @property.address %></p>
 <p><%= @property.country %></p>
 <p><%= @property.price %></p>
 <p><%= @property.description %></p>
 <p><%= @property.category %></p>
 <%= cl_image_tag @property.photo, height: 300, width: 400, crop: :fill %>
-<%= link_to "Back to Home", properties_path %>
+<%= link_to "Back to Home", properties_path %> -->
+
+<div class="container">
+  <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1506790409786-287062b21cfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80);">
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-8 ">
+      <h1><%= @property.name %></h1>
+      <h3><%= @property.category %></h3>
+      <h3><%= @property.address %></h3>
+      <h4><%= @property.country %></h4>
+    </div>
+    <div class="col-4 text-center">
+      <div style="align-items: center;
+      display: column;     margin-left: auto; padding-right: 5px"; class="card-price">
+      <div class="border-bottom mb-3">
+        <h3><%= @property.user_id %></h3>
+      </div>
+      <div class="border-bottom mb-3">
+        <h3><%= @property.price %>€</h3>
+      </div>
+      <div class="btn btn-success color-white mb-3">
+        <h4><%= link_to "Réserver", properties_path %></h4>
+      </div>
+    </div>
+    <div class="card-price">
+      <%= cl_image_tag @property.photo, height: 300, width: 100, crop: :fill %>
+    </div>
+  </div>
+</div>
+</div>

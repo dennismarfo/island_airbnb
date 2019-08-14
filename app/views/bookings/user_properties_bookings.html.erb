@@ -8,7 +8,7 @@
         <%= cl_image_tag booking.property.photo %>
         <div class="d-flex">
           <div class="card-product-infos">
-             <h2> Client : <%= booking.user.first_name %> <%= booking.user.last_name %></h2>
+             <h2> Client : <%= booking.property.user.first_name %> <%= booking.property.user.last_name %></h2>
             <p> <%= booking.check_in_date %> - <%= booking.check_out_date %></p>
           </div>
           <div class="" style="align-items: center;

@@ -14,8 +14,8 @@
             <p> <%= property.country %></p>
           </div>
           <div class="" style="align-items: center;
-      display: flex; padding-right: 5px; margin-left: auto;">
-            <%= link_to 'Edit', edit_property_path(property) %>
+      display: flex; padding-right: 40px; margin-left: auto;">
+            <%= link_to 'Edit', edit_property_path(property), class: 'mr-1' %>
             <%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>

@@ -1,0 +1,3 @@
+<h2><%= link_to property.name, property_path(property) %></h2>
+<p><%= property.country %></p>
+<%= cl_image_tag property.photo, height: 150, width: 190, crop: :fill %>

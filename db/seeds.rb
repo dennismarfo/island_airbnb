@@ -116,6 +116,16 @@ p9 = Property.new( name:"Maafushivaru",
 p9.remote_photo_url = "https://images.unsplash.com/photo-1505881502353-a1986add3762?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1562&q=80"
 p9.save!
 
+p10 =Property.new( name:"Baa Atoll",
+  address:"Strasbourg",
+  country:"Maldives",
+  description:"Ile paradisiaque",
+  price:"2000€",
+  category:"Island",
+  user_id: User.first.id)
+p10.remote_photo_url = "https://images.unsplash.com/photo-1527401850656-0f34108fdb30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1170&q=80"
+p10.save!
+
 
 
 

@@ -1,0 +1,12 @@
+<div class="container-fluid container-properties vh-100 d-flex align-items-center">
+    <div class="col-4 p-4 center bg-white">
+        <h2 class="text-center color-white">Create a booking</h2>
+        <div>
+        <%= simple_form_for [@property, @booking] do |f| %>
+        <%= f.input :check_in_date, as: :string, input_html: { class: "datepicker" } %>
+        <%= f.input :check_out_date, as: :string,  input_html: { class: "datepicker" } %>
+        <%= f.submit "Reserve", class: "btn btn-primary m-auto" %>
+        <% end %>
+      </div>
+    </div>
+</div>

@@ -16,6 +16,15 @@ class BookingsController < ApplicationController
     end
   end
 
+  def user_voyages_bookings
+    @bookings = Booking.where(user: current_user)
+  end
+
+  def user_properties_bookings
+    @property = Property.all
+    @bookings = Booking.where(@property.user == current_user)
+  end
+
   private
 
   def booking_params

@@ -8,4 +8,11 @@ Rails.application.routes.draw do
     namespace :users do
       resources :properties, only: [:index_properties]
     end
+
+    get 'user_properties', to: 'properties#user_properties', as: :user_properties
+
+    get 'user_voyages_bookings', to: 'bookings#user_voyages_bookings', as: :user_voyages_bookings
+
+    get 'user_properties_bookings', to: 'bookings#user_properties_bookings', as: :user_properties_bookings
+
 end

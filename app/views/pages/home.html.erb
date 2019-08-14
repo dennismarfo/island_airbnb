@@ -6,44 +6,38 @@
 
   </div>
   </div>
-  <div class="container mt-3 mb-3">
+
+  <div class="cards">
+  <div class="container mt-3 mb-3 d-flex flex-wrap">
     <div class="row">
+      <div class="col-12 mb-3"><h2>Découverte du jour</h2></div>
+    <% @properties = Property.first(3) %>
+     <% @properties.each do |property| %>
       <div class="col-4">
-        <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
+        <%= link_to property_path(property) do %>
+          <div class="card-trip rounded-lg">
+            <%= cl_image_tag property.photo, width: 400, height: 300, crop: :fill%>
+            <div class="d-flex">
+              <div class="card-trip-infos">
+                <div>
+                  <h2>
+                    <%=link_to property.name, property_path(property) %>
+                  </h2>
+                  <p>
+                    <%= property.country %>
+                  </p>
+                </div>
+              </div>
+              <div class="" style="align-items: center;
+    display: flex;     margin-left: auto; padding-right: 5px;">
+                <h6><%= property.price %> € </h6>
+              </div>
+            </div>
           </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
+        <% end %>
       </div>
-    </div>
-          <div class="col-4">
-        <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
-          </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
-      </div>
-    </div>
-          <div class="col-4">
-        <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
-          </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
+</div>

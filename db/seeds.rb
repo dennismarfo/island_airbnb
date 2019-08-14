@@ -8,6 +8,8 @@
 
 User.destroy_all
 Property.destroy_all
+Booking.destroy_all
+
 
 User.create!(first_name:"Theau", last_name:"Bruno", email:"theau@example.com", password:"password")
 User.create!(first_name:"Vincent", last_name:"Grenier", email:"vincent@example.com", password:"password")
@@ -127,5 +129,14 @@ p10.remote_photo_url = "https://images.unsplash.com/photo-1527401850656-0f34108f
 p10.save!
 
 
-
+Booking.create!(check_in_date:"1/01/2018", check_out_date:"04/01/2018", user_id: User.first.id, property_id: Property.last.id)
+Booking.create!(check_in_date:"20/02/2019", check_out_date:"04/03/2019", user_id: User.first.id, property_id: Property.last.id)
+Booking.create!(check_in_date:"30/04/2019", check_out_date:"04/06/2019", user_id: User.first.id, property_id: Property.second.id)
+Booking.create!(check_in_date:"10/03/2019", check_out_date:"20/03/2019", user_id: User.last.id, property_id: Property.second.id)
+Booking.create!(check_in_date:"27/07/2018", check_out_date:"02/08/2018", user_id: User.last.id, property_id: Property.third.id)
+Booking.create!(check_in_date:"1/01/2018", check_out_date:"04/01/2018", user_id: User.first.id, property_id: Property.fourth.id)
+Booking.create!(check_in_date:"20/02/2019", check_out_date:"04/03/2019", user_id: User.second.id, property_id: Property.last.id)
+Booking.create!(check_in_date:"30/04/2019", check_out_date:"04/06/2019", user_id: User.third.id, property_id: Property.fifth.id)
+Booking.create!(check_in_date:"10/03/2019", check_out_date:"20/03/2019", user_id: User.last.id, property_id: Property.second.id)
+Booking.create!(check_in_date:"27/07/2018", check_out_date:"02/08/2018", user_id: User.last.id, property_id: Property.third.id)
 

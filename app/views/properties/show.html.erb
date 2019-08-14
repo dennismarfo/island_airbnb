@@ -1,8 +1,48 @@
-<h2><%= @property.name %></h2>
+<!-- <h2><%= @property.name %></h2>
 <p><%= @property.address %></p>
 <p><%= @property.country %></p>
 <p><%= @property.price %></p>
 <p><%= @property.description %></p>
 <p><%= @property.category %></p>
 <%= cl_image_tag @property.photo, height: 300, width: 400, crop: :fill %>
-<%= link_to "Back to Home", properties_path %>
+<%= link_to "Back to Home", properties_path %> -->
+
+<div class="container">
+  <div class="card-price p-4">
+ <div class="banner" style="background-image: url(<%= cl_image_path @property.photo %>);">
+
+ </div>
+ <br>
+
+
+ <div class="row">
+  <div class="col-8 description">
+    <h2>Welcome to</h2>
+    <h1> <%= @property.name %></h1>
+    <h4>Located in the <%= @property.country %></h4>
+    <h4><%= @property.description %></h4>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    </p>
+  </div>
+  <div class="col-4 text-center">
+    <div style="align-items: center;
+    display: column;     margin-left: auto; padding-right: 5px"; class="card-price">
+    <div class="border-bottom mb-3">
+      <p> Owned by </p>
+      <h3><%= @property.user.first_name %> <%= @property.user.last_name %></h3>
+    </div>
+    <div class="mb-3">
+      <h3><%= @property.price %> € / day</h3>
+    </div>
+    <div class="btn btn-success color-white mb-3">
+      <h4><%= link_to "Réserver", new_property_booking_path(@property) %></h4>
+    </div>
+  </div>
+  <div class="card-price">
+    <p> map map map map </p>
+  </div>
+</div>
+</div>
+</div>
+</div>

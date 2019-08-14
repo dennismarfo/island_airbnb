@@ -1,0 +1,23 @@
+<div class="d-flex" style=" align-items: center;">
+<h2 class="m-4">Mes Properties</h2>
+<%= link_to 'Add new', new_property_path(@property) %>
+</div>
+
+<% @properties.each do |property| %>
+  <%= link_to property_path(property) do %>
+    <div class="card-product col-6">
+      <%= cl_image_tag property.photo %>
+      <div class="d-flex">
+        <div class="card-product-infos">
+          <h2> <%= property.name %></h2>
+          <p> <%= property.country %></p>
+        </div>
+        <div class="" style="align-items: center;
+    display: flex; padding-right: 5px; margin-left: auto;">
+          <%= link_to 'Edit', edit_property_path(property) %>
+          <%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+
   <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+
+
 </head>
 <body>
     <!-- NAVBAR USER CONNECTE -->
+
 <% if user_signed_in? %>
   <% if current_page?(root_path) || current_page?(new_user_session_path) || current_page?(new_user_registration_path)%>
     <%= render "shared/navbar_connected_invisible"  %>

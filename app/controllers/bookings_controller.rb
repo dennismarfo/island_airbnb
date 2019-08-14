@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
 
   def user_properties_bookings
     @property = Property.all
-    @bookings = Booking.where(@property.user == current_user)
+    @bookings = Booking.where("user_id = #{current_user.id}")
   end
 
   private

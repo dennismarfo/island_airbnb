@@ -1,19 +1,21 @@
-<div class="d-flex" style=" align-items: center;">
-<h2 class="m-4">Mes Voyages</h2>
-</div>
+<div class="container" style="height: 90vh">
+  <div class="d-flex" style=" align-items: center;">
+  <h2 class="m-4">Mes Voyages</h2>
+  </div>
 
-<% @bookings.each do |booking| %>
-    <div class="card-product col-6">
-      <%= cl_image_tag booking.property.photo %>
-      <div class="d-flex">
-        <div class="card-product-infos">
-          <h2> <%= booking.property.name %></h2>
-          <p> <%= booking.check_in_date %> - <%= booking.check_out_date %></p>
-        </div>
-        <div class="" style="align-items: center;
-    display: flex; padding-right: 5px; margin-left: auto;">
-          <h4> <%= booking.total_price %></h4>
+  <% @bookings.each do |booking| %>
+      <div class="card-product col-6">
+        <%= cl_image_tag booking.property.photo %>
+        <div class="d-flex">
+          <div class="card-product-infos">
+            <h2> <%= booking.property.name %></h2>
+            <p> <%= booking.check_in_date %> - <%= booking.check_out_date %></p>
+          </div>
+          <div class="" style="align-items: center;
+      display: flex; padding-right: 5px; margin-left: auto;">
+            <h4> <%= booking.total_price %></h4>
+          </div>
         </div>
       </div>
-    </div>
-<% end %>
+  <% end %>
+</div>

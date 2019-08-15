@@ -1,4 +1,4 @@
-<div class="container" style="height: 90vh">
+<div class="container" style="min-height: 100vh">
   <div class="d-flex" style=" align-items: center;">
   <h2 class="m-4">Mes Properties</h2>
   <%= link_to 'Add new', new_property_path(@property) %>
@@ -15,8 +15,8 @@
           </div>
           <div class="" style="align-items: center;
       display: flex; padding-right: 40px; margin-left: auto;">
-            <%= link_to 'Edit', edit_property_path(property), class: 'mr-1' %>
-            <%= link_to 'Delete', property, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to '', edit_property_path(property), class: 'fas fa-pen ml-3' %>
+            <%= link_to '', property, method: :delete, data: { confirm: 'Are you sure?' }, class: "fas fa-trash ml-3"%>
           </div>
         </div>
       </div>

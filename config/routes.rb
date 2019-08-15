@@ -8,11 +8,13 @@ Rails.application.routes.draw do
 
 
     resources :properties do
-      resources :bookings, only: [:index, :show, :create, :new, :destroy]
+      resources :bookings, only: [:create, :new, :destroy]
     end
+   resources :bookings, only: [:index]
 
-    namespace :users do
-      resources :properties, only: [:index_properties]
+    namespace :owner do
+      resources :properties, only: [:index]
+      resources :bookings, only: [:index]
     end
 
     get 'user_properties', to: 'properties#user_properties', as: :user_properties

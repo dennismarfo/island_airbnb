@@ -119,16 +119,15 @@ p9.remote_photo_url = "https://images.unsplash.com/photo-1505881502353-a1986add3
 p9.save!
 
 
-
-
-Booking.create!(check_in_date:"1/01/2018", check_out_date:"04/01/2018", user_id: User.first.id, property_id: Property.last.id)
-Booking.create!(check_in_date:"20/02/2019", check_out_date:"04/03/2019", user_id: User.first.id, property_id: Property.last.id)
-Booking.create!(check_in_date:"30/04/2019", check_out_date:"04/06/2019", user_id: User.first.id, property_id: Property.second.id)
-Booking.create!(check_in_date:"10/03/2019", check_out_date:"20/03/2019", user_id: User.last.id, property_id: Property.second.id)
-Booking.create!(check_in_date:"27/07/2018", check_out_date:"02/08/2018", user_id: User.last.id, property_id: Property.third.id)
-Booking.create!(check_in_date:"1/01/2018", check_out_date:"04/01/2018", user_id: User.first.id, property_id: Property.fourth.id)
-Booking.create!(check_in_date:"20/02/2019", check_out_date:"04/03/2019", user_id: User.second.id, property_id: Property.last.id)
-Booking.create!(check_in_date:"30/04/2019", check_out_date:"04/06/2019", user_id: User.third.id, property_id: Property.fifth.id)
-Booking.create!(check_in_date:"10/03/2019", check_out_date:"20/03/2019", user_id: User.last.id, property_id: Property.second.id)
-Booking.create!(check_in_date:"27/07/2018", check_out_date:"02/08/2018", user_id: User.last.id, property_id: Property.third.id)
-
+Booking.create!(check_in_date: Date.new(2018,10,3), check_out_date: Date.new(2018,10,10), user_id: User.first.id, property_id: Property.last.id)
+Booking.create!(check_in_date: Date.new(2019,8,12), check_out_date: Date.new(2019,8,19), user_id: User.first.id, property_id: Property.second.id)
+Booking.create!(check_in_date: Date.new(2019,12,20), check_out_date: Date.new(2019,12,30), user_id: User.first.id, property_id: Property.third.id)
+Booking.create!(check_in_date: Date.new(2018,10,3), check_out_date: Date.new(2018,10,10), user_id: User.second.id, property_id: Property.second.id)
+Booking.create!(check_in_date: Date.new(2019,8,12), check_out_date: Date.new(2019,8,19), user_id: User.second.id, property_id: Property.fifth.id)
+Booking.create!(check_in_date: Date.new(2019,12,20), check_out_date: Date.new(2019,12,30), user_id: User.second.id, property_id: Property.fourth.id)
+Booking.create!(check_in_date: Date.new(2018,10,3), check_out_date: Date.new(2018,10,10), user_id: User.third.id, property_id: Property.first.id)
+Booking.create!(check_in_date: Date.new(2019,8,12), check_out_date: Date.new(2019,8,19), user_id: User.third.id, property_id: p6.id)
+Booking.create!(check_in_date: Date.new(2019,12,20), check_out_date: Date.new(2019,12,30), user_id: User.third.id, property_id: p7.id)
+Booking.create!(check_in_date: Date.new(2018,10,3), check_out_date: Date.new(2018,10,10), user_id: User.fourth.id, property_id: Property.second.id)
+Booking.create!(check_in_date: Date.new(2019,8,12), check_out_date: Date.new(2019,8,19), user_id: User.fourth.id, property_id: Property.last.id)
+Booking.create!(check_in_date: Date.new(2019,12,20), check_out_date: Date.new(2019,12,30), user_id: User.fourth.id, property_id: Property.first.id)

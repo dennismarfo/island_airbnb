@@ -1,7 +1,11 @@
-<%= simple_form_for [@property] do |f| %>
+
+<div class="container-fluid container-properties">
+    <div class="col-4 center bg-white">
+        <h2 class="text-center">Modify <%= @property.name %></h2>
+        <%= simple_form_for [@property] do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.input :country %>
+  <%= f.input :country, as: "string" %>
   <%= f.input :price %>
   <%= f.input :description %>
   <%= f.input :category %>
@@ -9,3 +13,5 @@
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit "add a property", class: "btn btn-primary" %>
 <% end %>
+    </div>
+    </div>

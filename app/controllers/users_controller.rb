@@ -31,13 +31,14 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
 
-    redirect_to user_path
+    redirect_to root_path
   end
 
   private
 
   def set_user
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def user_params

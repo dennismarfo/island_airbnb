@@ -10,7 +10,7 @@ import { initMapbox2 } from '../plugins/init_mapbox2';
 initMapbox2();
 
 import { typedHome } from '../components/typed';
-if (window.location.href === "http://localhost:3000/" ){
+if (window.location.href === "https://island-airbnb.herokuapp.com/" ){
  typedHome();
 };
 

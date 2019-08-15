@@ -7,7 +7,7 @@ const typedHome = () => {
   typeSpeed: 80
   };
 
-  const typed = new Typed(".element", options);
-  }
+  const typed = new Typed(".homescript", options);
+  };
 
 export { typedHome };

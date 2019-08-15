@@ -26,7 +26,7 @@
               </div>
               <div class="" style="align-items: center;
       display: flex;     margin-left: auto; padding-right: 5px;">
-                <h6><%= booking.property.price %> € </h6>
+                <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
           </div>
           <div class="" style="align-items: center;
       display: flex; padding-right: 5px; margin-left: auto;">
-            <h4> <%= booking.total_price %> € </h4>
+            <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
           </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
           </div>
           <div class="" style="align-items: center;
       display: flex; padding-right: 5px; margin-left: auto;">
-            <h4> <%= booking.total_price %> €</h4>
+            <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
           </div>
         </div>
     </div>

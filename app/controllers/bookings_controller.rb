@@ -22,8 +22,7 @@ class BookingsController < ApplicationController
   end
 
   def user_properties_bookings
-    @property = Property.all
-    @bookings = Booking.where("user_id = #{current_user.id}")
+    @bookings = Booking.where(user: current_user).group_by(&:advancement)
   end
 
   private

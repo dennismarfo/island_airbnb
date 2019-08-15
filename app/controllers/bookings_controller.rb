@@ -17,7 +17,8 @@ class BookingsController < ApplicationController
   end
 
   def user_voyages_bookings
-    @bookings = Booking.where(user: current_user)
+    @bookings = Booking.where(user: current_user).group_by(&:advancement)
+    # @bookings = Booking.where(user: current_user).group_by {|booking| booking.advancement}
   end
 
   def user_properties_bookings

@@ -5,10 +5,10 @@
         <%= simple_form_for [@property] do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.input :country, as: "string" %>
+  <%= f.input :country %>
   <%= f.input :price %>
   <%= f.input :description %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: ['Beach', 'Island'] %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit "add a property", class: "btn btn-primary" %>

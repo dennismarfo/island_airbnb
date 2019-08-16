@@ -5,18 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "Destroying all .."
 User.destroy_all
 Property.destroy_all
 Booking.destroy_all
 
+puts "Creating User .."
+User.create!(first_name:"Theau", last_name:"Bruno", email:"theau@example.com", password:"password", avatar:" https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Théau_jwoy15.jpg")
+User.create!(first_name:"Vincent", last_name:"Grenier", email:"vincent@example.com", password:"password", avatar:"https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Vincent_3_vptn3f.jpg")
+User.create!(first_name:"Louis", last_name:"Loison", email:"louis@example.com", password:"password", avatar:"https://res.cloudinary.com/dmakaveli/image/upload/v1565950062/Louis_e8qnah.jpg")
+User.create!(first_name:"Dennis", last_name:"Kouassi", email:"dennis@example.com", password:"password", avatar:"https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Denis_pvb7jq.jpg")
 
-User.create!(first_name:"Theau", last_name:"Bruno", email:"theau@example.com", password:"password", avatar:"")
-User.create!(first_name:"Vincent", last_name:"Grenier", email:"vincent@example.com", password:"password", avatar:"")
-User.create!(first_name:"Louis", last_name:"Loison", email:"louis@example.com", password:"password", avatar:"")
-User.create!(first_name:"Dennis", last_name:"Kouassi", email:"dennis@example.com", password:"password", avatar:"")
-
-
+puts "Creating Properties .."
 p1 = Property.new( name:"Kuda Funafaru",
   address:"Kuda Funafaru",
   country:"Maldives",
@@ -118,7 +118,7 @@ p9 = Property.new( name:"Maafushivaru",
 p9.remote_photo_url = "https://images.unsplash.com/photo-1505881502353-a1986add3762?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1562&q=80"
 p9.save!
 
-
+puts "Creating Booking .."
 Booking.create!(check_in_date: Date.new(2018,10,3), check_out_date: Date.new(2018,10,10), user_id: User.first.id, property_id: Property.last.id)
 Booking.create!(check_in_date: Date.new(2019,8,12), check_out_date: Date.new(2019,8,19), user_id: User.first.id, property_id: Property.second.id)
 Booking.create!(check_in_date: Date.new(2019,12,20), check_out_date: Date.new(2019,12,30), user_id: User.first.id, property_id: Property.third.id)

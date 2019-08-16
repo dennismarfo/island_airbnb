@@ -22,8 +22,11 @@
             Hôte
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <a class="dropdown-item" href="#">  <%= link_to "Mes îles", user_properties_path %> </a>
-            <a class="dropdown-item" href="#"> <%= link_to "Mes clients", user_properties_bookings_path %>
+            <a class="dropdown-item" href="#">  <div class="pl-3"> <%= link_to "Mes îles", user_properties_path %> </a>
+            </div>
+            <a class="dropdown-item" href="#">
+              <div class="pl-3"> <%= link_to "Mes clients", user_properties_bookings_path %>
+              </div>
             </a>
           </div>
         </li>
@@ -32,8 +35,9 @@
     <span class="navbar-text mt-3 color-white">
       <ul class="no-style-list">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "avatar-sans-nom", width: 30%>
+          <a class="nav-link" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="avatar"> <%= image_tag "avatar-sans-nom", width: 30%>
+            </div>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown1" style="width:30px;">
             <a class="dropdown-item" href="#"> <%= link_to "Log out", destroy_user_session_path  %> </a>

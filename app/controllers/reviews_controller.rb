@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   def create
     @property = Property.find(params[:property_id])
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
 
     @review.property = @property
     if @review.save

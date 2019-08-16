@@ -10,7 +10,7 @@
   <% @bookings["present"].each do |booking| %>
     <div>
         <%#= link_to property_path(@property) do %>
-          <div class="card-trip rounded-lg col-6">
+          <div class="card-trip rounded-lg col-6 p-0">
             <%= cl_image_tag booking.property.photo, width: 400, height: 300, crop: :fill%>
             <div class="d-flex">
               <div class="card-trip-infos">

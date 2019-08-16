@@ -1,22 +1,77 @@
-<div class="container" style="min-height: 100vh">
-
+<div class="container-fluid" style="min-height: 100vh">
   <div class="d-flex" style=" align-items: center;">
-  <h2 class="m-4">Mes Clients</h2>
+   <!--  <h2 class="m-4">Mes Clients</h2> -->
   </div>
+<div style="padding-top: 15px;">
+    <div class="d-flex">
+      <div class="col-7">
+        <h3>Current Clients</h3>
+      <% @bookings["present"].each do |booking| %>
+        <div class="card-product ">
+            <%= cl_image_tag booking.property.photo %>
+            <div class="d-flex">
+              <div class="card-product-infos">
+                <h6> <%= booking.property.name %> | <%= booking.property.user.first_name %> <%= booking.property.user.last_name %></h6>
+                <p> Date : <%= booking.check_in_date %> | <%= booking.check_out_date %></p>
+                <div style="background-color: #EBEDEF; padding-left: 3px;" class="rounded">
+                  <p><%= booking.message %></p>
+                </div>
 
-  <% @bookings.each do |booking| %>
-      <div class="card-product col-6">
-        <%= cl_image_tag booking.property.photo %>
-        <div class="d-flex">
-          <div class="card-product-infos">
-             <h2> Client : <%= booking.property.user.first_name %> <%= booking.property.user.last_name %></h2>
-            <p> <%= booking.check_in_date %> - <%= booking.check_out_date %></p>
+              </div>
+              <div class="d-flex flex-column" style="align-items: center ;
+          display: flex; padding-right: 5px; margin-left: auto;">
+                <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
+                <%= cl_image_tag booking.property.user.avatar, class: 'rounded-circle ' %>
+              </div>
+            </div>
           </div>
-          <div class="" style="align-items: center;
-      display: flex; padding-right: 5px; margin-left: auto;">
-            <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
+      <% end %>
+
+
+    <h3>Past Clients</h3>
+      <% @bookings["past"].each do |booking| %>
+        <div class="card-product">
+            <%= cl_image_tag booking.property.photo %>
+            <div class="d-flex">
+              <div class="card-product-infos">
+                 <h6> <%= booking.property.name %> | <%= booking.property.user.first_name %> <%= booking.property.user.last_name %></h6>
+                <p> Date : <%= booking.check_in_date %> | <%= booking.check_out_date %></p>
+              </div>
+              <div class="d-flex flex-column" style="align-items: center ;
+          display: flex; padding-right: 5px; margin-left: auto;">
+                <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
+                <%= cl_image_tag booking.property.user.avatar, class: 'rounded-circle ' %>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
-  <% end %>
+
+      <div class="col-5">
+        <h3>Future clients</h3>
+      <% @bookings["future"].each do |booking| %>
+         <div class="card-product">
+            <%= cl_image_tag booking.property.photo %>
+            <div class="d-flex">
+              <div class="card-product-infos">
+                 <h6> <%= booking.property.name %> | <%= booking.property.user.first_name %> <%= booking.property.user.last_name %></h6>
+                <p> Date : <%= booking.check_in_date %> | <%= booking.check_out_date %></p>
+              </div>
+              <div class="d-flex flex-column" style="align-items: center ;
+          display: flex; padding-right: 5px; margin-left: auto;">
+                <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
+                <%= cl_image_tag booking.property.user.avatar, class: 'rounded-circle ' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+
+    </div>
+
 </div>
+
+</div>
+
+

@@ -1,4 +1,12 @@
-<%= simple_form_for [@property, @review] do |f| %>
+
+<div class="container-fluid container-properties vh-100 d-flex align-items-center">
+    <div class="col-4 p-4 center bg-white">
+        <h2 class="text-center color-white">Create a booking</h2>
+       <%= simple_form_for [@property, @review] do |f| %>
   <%= f.input :content %>
-  <%= f.button :submit, class: "btn btn-primary"  %>
+  <%= f.button :submit, class: "btn btn-success"  %>
 <% end %>
+
+        </div>
+    </div>
+</div>

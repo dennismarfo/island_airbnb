@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 const typedHome = () => {
 
   const options = {
-  strings: ["Welcome to <i>OUR APP</i>.", "We glad to see you here. :) "],
+  strings: ["Looking for amazing holidays","<i>iBayB</i>", "Find your dream Island!","<i>iBayB</i>"],
   typeSpeed: 80
   };
 

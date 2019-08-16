@@ -17,7 +17,9 @@ if (window.location.href === "https://ibaybeach.herokuapp.com/" || window.locati
 import "../plugins/flatpickr"
 
 const button = document.getElementById('book')
+
 if (button) {
+
   button.addEventListener('click', () => {
     const popup = document.getElementById('popup')
     const price = parseInt(popup.dataset.price)
@@ -29,10 +31,6 @@ if (button) {
     var time2 = new Date(checkout).getTime() / 1000
 
     const total = ((time2 - time) * price) /  86400
-  // Price OK
-  // Date de fin - date de début (check transforme tes date etc)
-  // opération
-  // Dans Popup addAdjacentHTML ( => )
 
     document.getElementById("prix").innerHTML = total
   })

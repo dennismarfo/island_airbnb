@@ -43,10 +43,10 @@
     <% @property.reviews.each do |review| %>
     <div class="col-10 border rounded d-flex" style="background-color: #FFFFFF">
     <div class="rounded-circle">
-      <%= review.user.avatar %>
+      <%= cl_image_tag review.user.avatar, width: 30, crop: :fill, class: "rounded-circle" %>
     </div>
     <div>
-      <h5><%= review.user_id %></h5>
+      <h5><%= review.user.first_name %> <%= review.user.last_name %></h5>
       <div style="background-color: #EBEDEF; padding-left: 3px;">
       <p><%= review.content %></p>
       </div>

@@ -38,7 +38,6 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-    @user = User.find(current_user.id)
   end
 
   def user_params

@@ -28,13 +28,12 @@ class BookingsController < ApplicationController
   end
 
   def user_properties_bookings
-    @property = Property.all
-    @bookings = Booking.where("user_id = #{current_user.id}")
+    @bookings = Booking.where(user: current_user).group_by(&:advancement)
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:check_in_date, :check_out_date, :total_price, :user_id)
+    params.require(:booking).permit(:check_in_date, :check_out_date, :total_price, :user_id, :message)
   end
 end

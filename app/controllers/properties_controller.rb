@@ -40,6 +40,12 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
   end
 
+  def update
+    @property = Property.find(params[:id])
+    @property.update(property_params)
+    redirect_to property_path(@property)
+  end
+
   def destroy
     @property = Property.find(params[:id])
     @property.destroy

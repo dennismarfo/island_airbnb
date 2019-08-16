@@ -10,19 +10,20 @@
         <div class="card-product ">
             <%= cl_image_tag booking.property.photo %>
             <div class="d-flex">
+
               <div class="card-product-infos">
                 <h6> <%= booking.property.name %> | <%= booking.property.user.first_name %> <%= booking.property.user.last_name %></h6>
                 <p> Date : <%= booking.check_in_date %> | <%= booking.check_out_date %></p>
                 <div style="background-color: #EBEDEF; padding-left: 3px;" class="rounded">
                   <p><%= booking.message %></p>
                 </div>
+              </div>
+
+              <div class="d-flex flex align-items-center" >
+                <h6 style="position: absolute; left:80%;"> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
 
               </div>
-              <div class="d-flex flex-column" style="align-items: center ;
-          display: flex; padding-right: 5px; margin-left: auto;">
-                <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
-                <%= cl_image_tag booking.property.user.avatar, class: 'rounded-circle ' %>
-              </div>
+
             </div>
           </div>
       <% end %>
@@ -39,8 +40,8 @@
               </div>
               <div class="d-flex flex-column" style="align-items: center ;
           display: flex; padding-right: 5px; margin-left: auto;">
-                <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
-                <%= cl_image_tag booking.property.user.avatar, class: 'rounded-circle ' %>
+                <h6 style="position: absolute; left:80%;"> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
+
               </div>
             </div>
           </div>
@@ -59,9 +60,10 @@
               </div>
               <div class="d-flex flex-column" style="align-items: center ;
           display: flex; padding-right: 5px; margin-left: auto;">
-                <h6> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
-                <%= cl_image_tag booking.property.user.avatar, class: 'rounded-circle ' %>
+                <h6 style="position:absolute; left:80%"> <%=  ((booking.check_out_date - booking.check_in_date) * booking.property.price).to_i %> €</h6>
+
               </div>
+
             </div>
           </div>
         <% end %>

@@ -36,7 +36,7 @@
       <ul class="no-style-list">
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <div class="avatar"> <%= image_tag "avatar-sans-nom", width: 30%>
+            <div class="avatar"> <%= cl_image_tag current_user.avatar, width: 30%>
             </div>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown1" style="width:30px;">

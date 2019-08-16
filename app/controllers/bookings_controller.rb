@@ -10,9 +10,15 @@ class BookingsController < ApplicationController
     @booking.property = @property
     @booking.user_id = current_user[:id]
     if @booking.save
-      redirect_to property_path(@property)
+      respond_to do |format|
+        format.html { redirect_to property_path(@property) }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'bookings/new' }
+        format.js
+      end
     end
   end
 

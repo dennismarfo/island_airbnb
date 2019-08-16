@@ -11,10 +11,19 @@ Property.destroy_all
 Booking.destroy_all
 
 puts "Creating User .."
-User.create!(first_name:"Theau", last_name:"Bruno", email:"theau@example.com", password:"password", avatar:" https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Théau_jwoy15.jpg")
-User.create!(first_name:"Vincent", last_name:"Grenier", email:"vincent@example.com", password:"password", avatar:"https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Vincent_3_vptn3f.jpg")
-User.create!(first_name:"Louis", last_name:"Loison", email:"louis@example.com", password:"password", avatar:"https://res.cloudinary.com/dmakaveli/image/upload/v1565950062/Louis_e8qnah.jpg")
-User.create!(first_name:"Dennis", last_name:"Kouassi", email:"dennis@example.com", password:"password", avatar:"https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Denis_pvb7jq.jpg")
+u1 = User.new(first_name:"Theau", last_name:"Bruno", email:"theau@example.com", password:"password")
+u1.remote_avatar_url = "https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Théau_jwoy15.jpg"
+u1.save!
+u2 = User.create!(first_name:"Vincent", last_name:"Grenier", email:"vincent@example.com", password:"password")
+u2.remote_avatar_url = "https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Vincent_3_vptn3f.jpg"
+u2.save!
+u3 = User.create!(first_name:"Louis", last_name:"Loison", email:"louis@example.com", password:"password")
+u3.remote_avatar_url = "https://res.cloudinary.com/dmakaveli/image/upload/v1565950062/Louis_e8qnah.jpg"
+u3.save!
+u4 = User.create!(first_name:"Dennis", last_name:"Kouassi", email:"dennis@example.com", password:"password")
+u4.remote_avatar_url = "https://res.cloudinary.com/dmakaveli/image/upload/v1565950061/Denis_pvb7jq.jpg"
+u4.save!
+
 
 puts "Creating Properties .."
 p1 = Property.new( name:"Kuda Funafaru",

@@ -45,7 +45,7 @@ class PropertiesController < ApplicationController
     @property.destroy
 
     # no need for app/views/restaurants/destroy.html.erb
-    redirect_to properties_path
+    redirect_to user_properties_path
   end
 
   def user_properties
